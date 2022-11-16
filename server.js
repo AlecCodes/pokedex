@@ -2,6 +2,12 @@ const express = require("express")
 const app = express();
 const pokemons = require("./models/pokemon.js")
 
+
+//NEW route
+app.get("/pokemon/new",(req,res) =>{
+    res.send("NEW!")
+})
+
 //INDEX route
 app.get("/pokemon", (req,res) =>{
     res.render("index.ejs",{pokemons})
