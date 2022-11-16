@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%= pokemon.name %></h1>
+    <h2>
+        <% for (type of pokemon.type) { %>
+        <%= type %> 
+        <% } %> 
+    </h2>
+    <img src = "<%= pokemon.img %>" ></img>
+    <div class = "stats">
+        <div>HP: <%= pokemon.stats.hp  %></div>
+        <div>ATTACK: <%= pokemon.stats.attack  %></div>
+        <div>DEFENSE: <%= pokemon.stats.defense  %></div>
+        <div>SP. ATTACK: <%= pokemon.stats.spattack  %></div>
+        <div>SP. DEFENSE: <%= pokemon.stats.spdefense  %></div>
+        <div>SPEED: <%= pokemon.stats.speed  %></div>
+    </div>
+
+</body>
+</html>

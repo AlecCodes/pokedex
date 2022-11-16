@@ -9,7 +9,7 @@ app.get("/pokemon", (req,res) =>{
 
 //SHOW route
 app.get("/pokemon/:id",(req,res) =>{
-    res.send(req.params.id)
+    res.render("show.ejs",{pokemon : pokemons[req.params.id]})
 })
 
 app.listen(3000, ()=>{
