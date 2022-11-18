@@ -4,6 +4,32 @@
     <body>
         <form action="/pokemon/<%=index%>/?_method_PUT " method="POST">
             <input type="text" name="name" value="<%= pokemon.name %>">
+            <br>
+            <input type="text" name="type" value="<%= pokemon.type %>">
+            <br>
+            <input type="text" name="img" value="<%= "Image (JPG or PNG!)" %>">
+            <br>
+            <input type="text" name="stats[hp]" value="<%= pokemon.stats.hp %>">
+            <br>
+            <input type="text" name="stats[attack]" value = "<%= pokemon.stats.attack %> ">
+            <br>
+            <input type="text" name="stats[defense]" value ="<%=pokemon.stats.defense%> ">
+            <br>
+            <input type ="text" name="stats[spattack]" value="<%= pokemon.stats.spattack %> ">
+            <br>
+            <input type="text" name="stats[spdefense]" value="<%= pokemon.stats.spdefense %>">
+            <br>
+            <input type="text" name="misc[classification]" value="<%= pokemon.misc.classification %>">
+            <br>
+            <input type="text" name="misc[heigh]" value="<%= pokemon.misc.height %>">
+            <br>
+            <input type="text" name="misc[capturerate]" value="<%= pokemon.misc.capturerate %>">
+            <br>
+            <input type="text" name="misc[eggsteps]" value="<%= pokemon.misc.eggsteps %>">
+            <br>
+            <input type="text" name="misc[happiness]" value="<%= pokemon.misc.happiness %>">
+            <br>
+            <input type="submit" value="Update Pokemon">
         </form>
     </body>
 </html>

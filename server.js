@@ -1,7 +1,8 @@
 const express = require("express")
 const app = express();
 const pokemons = require("./models/pokemon.js")
-const methodOverride = require("method-override")
+const methodOverride = require("method-override");
+//const pokemon = require("./models/pokemon.js");
 
 //////////////////////////////////////
 //MIDDLEWARE
@@ -19,6 +20,12 @@ app.get("/pokemon", (req,res) =>{
 app.get("/pokemon/new",(req,res) =>{
     console.log("Here's the params:" +req.body)
     res.render("new.ejs")
+})
+
+//UPDATE route
+app.put("/pokemon/:id",(req,res) =>{
+    pokemons[req.params.id] = req.body
+    res.redirect("/pokemon")
 })
 
 //CREATE route
