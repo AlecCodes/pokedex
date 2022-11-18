@@ -23,9 +23,9 @@ app.get("/pokemon/new",(req,res) =>{
 })
 
 //UPDATE route
-app.put("/pokemon/:id",(req,res) =>{
+app.post("/pokemon/:id",(req,res) =>{
     pokemons[req.params.id] = req.body
-    res.redirect("/pokemon")
+    res.redirect("/pokemon/")
 })
 
 //CREATE route
