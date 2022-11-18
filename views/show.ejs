@@ -22,6 +22,22 @@
         <div>SP. DEFENSE: <%= pokemon.stats.spdefense  %></div>
         <div>SPEED: <%= pokemon.stats.speed  %></div>
     </div>
+    <div class ="misc">
+        <div>Classification: <%= pokemon.misc.classification %> </div>
+        <div>Height: <%= pokemon.misc.height %> </div>
+        <div>Weight: <%= pokemon.misc.weight  %> </div>
+        <div>Capture rate: <%= pokemon.misc.capturerate  %> </div>
+        <div>Egg Steps:<%= pokemon.misc.eggsteps %> </div>
+        <div>Exp Growth: <%= pokemon.misc.expgrowth  %> </div>
+        <div>Happiness: <%= pokemon.misc.happiness %> </div>
+        <div></div>
+    </div>
+    <div class ="moves">
+        <% for (let i = 0; i < pokemon.moves.level.length; i++) { %>
+            <div><%= pokemon.moves.level[i].name + " learned @ level " + pokemon.moves.level[i].learnedat %> </div>
+        <% } %>  
+    </div>
+    <a href = "/pokemon/<%= index %>/edit "><button>EDIT</button></a>
 
 </body>
 </html>

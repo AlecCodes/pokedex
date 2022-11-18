@@ -1,13 +1,14 @@
 const express = require("express")
 const app = express();
 const pokemons = require("./models/pokemon.js")
-
+const methodOverride = require("method-override")
 
 //////////////////////////////////////
 //MIDDLEWARE
 //////////////////////////////////////
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
+app.use(methodOverride("_method"))
 
 //INDEX route
 app.get("/pokemon", (req,res) =>{
@@ -26,9 +27,20 @@ app.post("/pokemon",(req,res)=>{
     res.redirect('/pokemon')
 })
 
+//EDIT Route
+app.get("/pokemon/:id/edit",(req,res)=>{
+    res.render("edit.ejs",{
+        pokemon : pokemons[req.params.id],
+        index : req.params.id
+    })
+})
+
 //SHOW route
 app.get("/pokemon/:id",(req,res) =>{
-    res.render("show.ejs",{pokemon : pokemons[req.params.id]})
+    res.render("show.ejs",{
+        pokemon : pokemons[req.params.id],
+        index : req.params.id
+    })
 })
 
 app.listen(3000, ()=>{
