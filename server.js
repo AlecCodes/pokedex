@@ -2,6 +2,8 @@ const express = require("express")
 const app = express();
 const pokemons = require("./models/pokemon.js")
 const methodOverride = require("method-override");
+const pokemon = require("./models/pokemon.js");
+const morgan = require("morgan")
 //const pokemon = require("./models/pokemon.js");
 
 //////////////////////////////////////
@@ -10,6 +12,7 @@ const methodOverride = require("method-override");
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(methodOverride("_method"))
+app.use(morgan("tiny"))
 
 //INDEX route
 app.get("/pokemon", (req,res) =>{
@@ -20,6 +23,12 @@ app.get("/pokemon", (req,res) =>{
 app.get("/pokemon/new",(req,res) =>{
     console.log("Here's the params:" +req.body)
     res.render("new.ejs")
+})
+
+//DESTROY route
+app.delete("/pokemon/:id",(req,res) =>{
+    pokemon.splice(req.params.id, 1)
+    res.redirect("/pokemon")
 })
 
 //UPDATE route
