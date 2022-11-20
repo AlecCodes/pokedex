@@ -1,3 +1,5 @@
+<!-- Apply filters, start with using DOM to clear the div -->
+
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head.ejs')  %> 
@@ -8,6 +10,9 @@
         <a href = "/pokemon/<%=i%>" ><img src = "<%= pokemons[i].img %>" height = 50px width="50px"></a>
         <% } %>
         <a href = "/pokemon/new"><button>NEW</button></a>
+    </div>
+    <div>
+        <button id = "clear">CLEAR</button>
     </div>
 </body>
 </html>
