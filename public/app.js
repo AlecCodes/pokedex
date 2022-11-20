@@ -1,8 +1,6 @@
-const picgrid = document.getElementById("images")
-const button = document.getElementById("clear")
+// const picgrid = document.getElementById("images")
+// const button = document.getElementById("clear")
 
-function clearer(){picgrid.replaceChildren()};
+// function clearer(){picgrid.replaceChildren()};
 
-button.addEventListener("click",clearer)
-
- 
+// button.addEventListener("click",clearer)

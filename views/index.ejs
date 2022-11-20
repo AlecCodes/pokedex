@@ -14,5 +14,26 @@
     <div>
         <button id = "clear">CLEAR</button>
     </div>
+    <form id="typeFilter">
+        <input type="text" name="typequery" placeholder="Filter for type">
+        <input type="submit">
+    </form>
 </body>
+<script>
+    const picgrid = $("#images")
+    const button = $("#clear")
+    const typeFilter = $('#typeFilter')
+    const filterTextInput = $('input[type="text"]')
+
+    function clearer(){picgrid.empty()};
+    button.on("click",clearer)
+
+    typeFilter.on("submit",function(event){
+        event.preventDefault();
+        console.log(filterTextInput.val())
+
+    })
+
+
+</script>
 </html>

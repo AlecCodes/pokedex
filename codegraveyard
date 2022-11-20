@@ -14,3 +14,17 @@
             <div><%= pokemon.moves.level[i].name + " learned @ level " + pokemon.moves.level[i].learnedat %> </div>
         <% } %>  
     </div>
+
+
+//for EDIT.ejs - edit all stats
+    <input type="text" name="misc[classification]" value="<%= pokemon.misc.classification %>">
+    <br>
+    <input type="text" name="misc[heigh]" value="<%= pokemon.misc.height %>">
+    <br>
+    <input type="text" name="misc[capturerate]" value="<%= pokemon.misc.capturerate %>">
+    <br>
+    <input type="text" name="misc[eggsteps]" value="<%= pokemon.misc.eggsteps %>">
+    <br>
+    <input type="text" name="misc[happiness]" value="<%= pokemon.misc.happiness %>">
+    <input type="text" name="">
+    <br>

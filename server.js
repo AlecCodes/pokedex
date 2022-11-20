@@ -2,9 +2,8 @@ const express = require("express")
 const app = express();
 const pokemons = require("./models/pokemon.js")
 const methodOverride = require("method-override");
-const pokemon = require("./models/pokemon.js");
-const morgan = require("morgan")
 //const pokemon = require("./models/pokemon.js");
+const morgan = require("morgan")
 
 //////////////////////////////////////
 //MIDDLEWARE
@@ -50,6 +49,11 @@ app.get("/pokemon/:id/edit",(req,res)=>{
         pokemon : pokemons[req.params.id],
         index : req.params.id
     })
+})
+
+//SHOW the filtered pokemon by type
+app.get('/pokemon/:type',(req,res)=>{
+    res.send(req.params.type)
 })
 
 //SHOW route
