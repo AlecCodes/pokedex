@@ -13,6 +13,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(methodOverride("_method"))
 app.use(morgan("tiny"))
+app.use('/static',express.static('public'))
 
 //INDEX route
 app.get("/pokemon", (req,res) =>{
