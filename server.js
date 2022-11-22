@@ -2,7 +2,6 @@ const express = require("express")
 const app = express();
 const pokemons = require("./models/pokemon.js")
 const methodOverride = require("method-override");
-//const pokemon = require("./models/pokemon.js");
 const morgan = require("morgan")
 
 //////////////////////////////////////
@@ -27,7 +26,7 @@ app.get("/pokemon/new",(req,res) =>{
 
 //DESTROY route
 app.delete("/pokemon/:id",(req,res) =>{
-    pokemon.splice(req.params.id, 1)
+    pokemons.splice(req.params.id, 1)
     res.redirect("/pokemon")
 })
 
@@ -51,10 +50,6 @@ app.get("/pokemon/:id/edit",(req,res)=>{
     })
 })
 
-//SHOW the filtered pokemon by type
-app.get('/pokemon/:type',(req,res)=>{
-    res.send(req.params.type)
-})
 
 //SHOW route
 app.get("/pokemon/:id",(req,res) =>{

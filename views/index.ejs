@@ -5,19 +5,22 @@
 <%- include('./partials/head.ejs')  %> 
 <body>
     <h1>Pokedex</h1>
-    <div id = "images">
-        <% for (let i = 0; i < pokemons.length; i++) {%>
-        <a href = "/pokemon/<%=i%>" ><img src = "<%= pokemons[i].img %>" height = 50px width="50px"></a>
-        <% } %>
-        <a href = "/pokemon/new"><button>NEW</button></a>
+    <div id="imagecontainer">
+        <div id = "images">
+            <% for (let i = 0; i < pokemons.length; i++) {%>
+            <a href = "/pokemon/<%=i%>" ><img src = "<%= pokemons[i].img %>" height = 50px width="50px"></a>
+            <% } %>
+            <a href = "/pokemon/new"><button>NEW</button></a>
+        </div>
     </div>
-    <div>
+    <!-- <div>
         <button id = "clear">CLEAR</button>
     </div>
-    <form id="typeFilter">
+    <form id="typeFilter" method="GET">
         <input type="text" name="typequery" placeholder="Filter for type">
         <input type="submit">
-    </form>
+    </form> -->
+
 </body>
 <script>
     const picgrid = $("#images")
@@ -30,8 +33,9 @@
 
     typeFilter.on("submit",function(event){
         event.preventDefault();
+        clearer()
         console.log(filterTextInput.val())
-
+ß
     })
 
 
